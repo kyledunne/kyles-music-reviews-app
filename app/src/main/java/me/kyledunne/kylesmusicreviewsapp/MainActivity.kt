@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navController: NavController
+    private lateinit var fab: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,11 +30,11 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
+        fab = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
-        }//kyledunne
+        }
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         navController = findNavController(R.id.nav_host_fragment)
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
+        fab.show()
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
@@ -68,8 +69,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.settings_menu_item -> navController.navigate(R.id.action_global_settingsFragment)
-            R.id.about_menu_item -> navController.navigate(R.id.action_global_aboutFragment)
+            R.id.settings_menu_item -> {
+                fab.hide()
+                navController.navigate(R.id.action_global_settingsFragment)
+            }
+            R.id.about_menu_item -> {
+                fab.hide()
+                navController.navigate(R.id.action_global_aboutFragment)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
