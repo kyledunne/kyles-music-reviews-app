@@ -23,7 +23,7 @@ class GolfFragment : Fragment() {
             ViewModelProviders.of(this).get(GolfViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_golf, container, false)
         val textView: TextView = root.findViewById(R.id.text_golf)
-        golfViewModel.text.observe(this, Observer {
+        golfViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

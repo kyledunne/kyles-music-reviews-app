@@ -23,7 +23,7 @@ class MusicFragment : Fragment() {
             ViewModelProviders.of(this).get(MusicViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_music, container, false)
         val textView: TextView = root.findViewById(R.id.text_music)
-        musicViewModel.text.observe(this, Observer {
+        musicViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
