@@ -8,4 +8,5 @@
 
     <dimen name="album_image_size">64dp</dimen>
     <dimen name="album_list_element_height">112dp</dimen>
+    <dimen name="nav_header_image_size">92dp</dimen>
 </resources>
