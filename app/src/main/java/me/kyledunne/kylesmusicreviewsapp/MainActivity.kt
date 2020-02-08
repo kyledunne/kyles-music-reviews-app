@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
+        menuInflater.inflate(R.menu.main_overflow_menu, menu)
         return true
     }
 
@@ -68,7 +68,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_settings -> navController.navigate(R.id.action_global_aboutFragment)
+            R.id.settings_menu_item -> navController.navigate(R.id.action_global_settingsFragment)
+            R.id.about_menu_item -> navController.navigate(R.id.action_global_aboutFragment)
         }
         return super.onOptionsItemSelected(item)
     }

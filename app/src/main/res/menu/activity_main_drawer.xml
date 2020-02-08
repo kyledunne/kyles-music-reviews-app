@@ -7,10 +7,10 @@
         <item
             android:id="@+id/nav_music"
             android:icon="@drawable/musnote_black_24x24"
-            android:title="@string/menu_music" />
+            android:title="@string/music" />
         <item
             android:id="@+id/nav_golf"
             android:icon="@drawable/golf_course_black_24x24"
-            android:title="@string/menu_golf" />
+            android:title="@string/golf" />
     </group>
 </menu>
