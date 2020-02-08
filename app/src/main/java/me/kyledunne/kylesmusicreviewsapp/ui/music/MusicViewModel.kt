@@ -1,13 +1,13 @@
-package me.kyledunne.kylesmusicreviewsapp.ui.gallery
+package me.kyledunne.kylesmusicreviewsapp.ui.music
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class GalleryViewModel : ViewModel() {
+class MusicViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
+        value = "This is music Fragment"
     }
     val text: LiveData<String> = _text
 }

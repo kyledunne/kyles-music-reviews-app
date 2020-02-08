@@ -1,4 +1,4 @@
-package me.kyledunne.kylesmusicreviewsapp.ui.home
+package me.kyledunne.kylesmusicreviewsapp.ui.golf
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import me.kyledunne.kylesmusicreviewsapp.R
 
-class HomeFragment : Fragment() {
+class GolfFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var golfViewModel: GolfViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(this, Observer {
+        golfViewModel =
+            ViewModelProviders.of(this).get(GolfViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_golf, container, false)
+        val textView: TextView = root.findViewById(R.id.text_golf)
+        golfViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root
