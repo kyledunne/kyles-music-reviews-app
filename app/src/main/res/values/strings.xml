@@ -11,4 +11,9 @@
     <string name="menu_golf">Golf</string>
 
     <string name="album_artwork">Album Artwork</string>
+
+    <string name="about_body_text">This is my personal app for reviewing things. The main reason I
+        created it is to improve my Android development skills, although I also do intend to put
+        these reviews up on my personal website when I get that up and running in the future.
+    </string>
 </resources>
